@@ -6,9 +6,7 @@ func main() {
 	conn := openConn()
 	defer conn.Close()
 
-	onActiveWindowChange(conn, func(data string) {
-		windowName := getWindowName()
-
-		fmt.Println(windowName)
+	onActiveWindowChange(conn, func(class string) {
+		fmt.Println(getWindowName(class))
 	})
 }

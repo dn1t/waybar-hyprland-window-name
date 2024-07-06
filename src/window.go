@@ -2,21 +2,10 @@ package main
 
 import (
 	"os"
-	"os/exec"
 	"strings"
 
 	"code.rocketnine.space/tslocum/desktop"
 )
-
-func getActiveWindowClass() string {
-	hyprCmd := exec.Command("sh", "-c", "hyprctl activewindow | sed -n '/class:/s/class://p' | xargs")
-	stdout, err := hyprCmd.Output()
-	if err != nil {
-		return ""
-	}
-
-	return strings.TrimSpace(string(stdout))
-}
 
 func getDirs(class string) []string {
 	home := os.Getenv("HOME")
@@ -38,9 +27,7 @@ func getDirs(class string) []string {
 	return dirs
 }
 
-func getWindowName() string {
-	class := getActiveWindowClass()
-
+func getWindowName(class string) string {
 	if class != "" {
 		dirs := getDirs(class)
 		entries, err := desktop.Scan(dirs)

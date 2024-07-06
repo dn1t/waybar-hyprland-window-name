@@ -36,7 +36,7 @@ func openConn() net.Conn {
 	return socket
 }
 
-func onActiveWindowChange(conn net.Conn, listener func(data string)) {
+func onActiveWindowChange(conn net.Conn, listener func(class string)) {
 	buf := make([]byte, 4096)
 
 	for {
