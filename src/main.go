@@ -7,6 +7,7 @@ func main() {
 	defer conn.Close()
 
 	onActiveWindowChange(conn, func(class string) {
-		fmt.Println(getWindowName(class))
+		name := getWindowName(class)
+		fmt.Printf("{\"text\": \"%s\", \"class\": \"waybar-hyprland-window-name\"}\n", name)
 	})
 }
