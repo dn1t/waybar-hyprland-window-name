@@ -17,7 +17,7 @@ make
   "modules-left": [/* ... */, "custom/window_name", /* ... */],
   // ...
   "custom/window_name": {
-    "exec": "~/.config/waybar/waybar-window-name"
+    "exec": "~/.config/waybar/waybar-hyprland-window-name"
   },
   // ...
 }
