@@ -1,4 +1,4 @@
-module waybar-window-name
+module waybar-hyprland-window-name
 
 go 1.22.5
 
